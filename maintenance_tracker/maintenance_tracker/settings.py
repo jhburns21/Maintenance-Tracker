@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
+    # Django Core
+    'DjangoCore.core',
+    'DjangoCore.core_authentication',
+    'DjangoCore.core_authorization',
+    'DjangoCore.core_logging',
 ]
 
 MIDDLEWARE = [
