@@ -45,6 +45,7 @@ MY_APPS = [
     'DjangoCore.core_authentication',
     'DjangoCore.core_authorization',
     'DjangoCore.core_logging',
+    'core_interface',
 ]
 
 INSTALLED_APPS = PACKAGE_APPS + MY_APPS
@@ -138,3 +139,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # TODO: Configure for SMTP so error emails are sent. Maybe use this for email service: https://aws.amazon.com/ses/details/
 ADMINS = []
+
+DJANGO_CORE_INTERFACE_APP_NAME = 'core_interface'
