@@ -1,0 +1,3 @@
+[submodule "maintenance_tracker/DjangoCore"]
+	path = maintenance_tracker/DjangoCore
+	url = git@github.com:jhburns21/DjangoCore-Submodule.git
