@@ -127,3 +127,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# TODO: Configure for SMTP so error emails are sent. Maybe use this for email service: https://aws.amazon.com/ses/details/
+ADMINS = []
