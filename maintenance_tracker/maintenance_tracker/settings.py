@@ -46,6 +46,7 @@ MY_APPS = [
     'DjangoCore.core_authorization',
     'DjangoCore.core_logging',
     'core_interface',
+    'maintenance',
 ]
 
 INSTALLED_APPS = PACKAGE_APPS + MY_APPS
