@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap-grid.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
+
+// https://www.color-hex.com/color-palette/30415
+// https://colorcodes.io/gray/chrome-color-codes/
+
+body {
+    background-color: #F2E9EA;
+    margin: 0;
+}
