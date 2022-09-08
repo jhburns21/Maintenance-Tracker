@@ -38,14 +38,15 @@ PACKAGE_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
+    'rest_framework.authtoken',
 ]
 MY_APPS = [
     # Django Core
     'DjangoCore.core',
     'DjangoCore.core_authentication',
-    'DjangoCore.core_authorization',
+    # 'DjangoCore.core_authorization',
     'DjangoCore.core_logging',
-    'core_interface',
+    'site_users',
     'maintenance',
     'dashboard',
 ]
@@ -150,4 +151,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Maybe use this for email service: https://aws.amazon.com/ses/details/
 ADMINS = []
 
-DJANGO_CORE_INTERFACE_APP_NAME = 'core_interface'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+    #                        ISO Standard,    DateTime with AM/PM,  Convert from a JS Date() in PDT
+    'DATETIME_INPUT_FORMATS': ['iso-8601', '%m/%d/%Y %I:%M:%S %p', '%a %b %d %Y %H:%M:%S %Z%z (Pacific Daylight Time)'],
+    'DATE_INPUT_FORMATS': ['iso-8601', '%m/%d/%Y'],
+}

@@ -11,7 +11,11 @@ import { HeaderComponent } from './framework/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // primeNG
-import {ButtonModule} from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
+import { LoginComponent } from './login/login.component';
+import { CurrencyPipe, DatePipe, DecimalPipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DjangoInterceptor } from './_services/_interceptors/django-interceptor';
 
 @NgModule({
   declarations: [
@@ -20,16 +24,25 @@ import {ButtonModule} from 'primeng/button';
     SidebarComponent,
     FooterComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    HttpClientModule,
     //PrimeNG
     ButtonModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    {provide: HTTP_INTERCEPTORS, useClass: DjangoInterceptor, multi: true},
+    DatePipe, DecimalPipe, CurrencyPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
