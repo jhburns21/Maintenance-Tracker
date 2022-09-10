@@ -137,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR) + '/static/'
-STATICFILES_DIRS = [f"{str(BASE_DIR)}/DjangoCore/core/templates/", ]
+STATICFILES_DIRS = [f"{str(BASE_DIR)}/DjangoCore/core/templates/", f"{str(BASE_DIR)}/resources/", ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR) + '/media/'
