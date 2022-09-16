@@ -1,14 +1,39 @@
 <div class="container-fluid" style="height: 100vh;">
     <div class="row" style="height: 100%;">
-        <div class="col-md-4" id="image-left">
-        </div>
-        <div class="col-md-6" id="form-container">
-            <div class="row" style="height: 100%;">
-                <div class="col-md-12 d-flex align-items-center justify-content-center" style="height: 100%;">
+        <div class="col-md-6" id="image-left"></div>
+        <form [formGroup]="loginForm" class="col-md-6 d-flex flex-column align-items-center justify-content-center" id="loginForm">
+            <div class="row">
+                <div class="col-md-12" style="height: 100%;">
                     <h2>Maintenance Tracker</h2>
-                    
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-md-12" style="height: 100%;">
+                    <label for="username" style="display: block;">User Name</label>
+                    <input pInputText id="username" formControlName="username" />
+                    <div *ngIf="loginForm.get('username')?.errors">
+                        <div class="error-text" *ngIf="loginForm.get('username').errors.required">
+                            Username is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="height: 100%">
+                    <label for="password" style="display: block;">Password</label>
+                    <input pInputText id="password" formControlName="password" />
+                    <div *ngIf="loginForm.get('password')?.errors">
+                        <div class="error-text" *ngIf="loginForm.get('password').errors.required">
+                            Password is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p-button label="Login" (onClick)="login()"></p-button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

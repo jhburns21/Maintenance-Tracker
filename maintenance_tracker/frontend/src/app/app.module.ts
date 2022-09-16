@@ -9,13 +9,18 @@ import { FooterComponent } from './framework/footer/footer.component';
 import { MainComponent } from './framework/main/main.component';
 import { HeaderComponent } from './framework/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-// primeNG
-import { ButtonModule } from 'primeng/button';
 import { LoginComponent } from './login/login.component';
 import { CurrencyPipe, DatePipe, DecimalPipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DjangoInterceptor } from './_services/_interceptors/django-interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// primeNG
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext'
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -32,8 +37,12 @@ import { DjangoInterceptor } from './_services/_interceptors/django-interceptor'
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     //PrimeNG
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    ToastModule,
   ],
   providers: [
     {
@@ -41,7 +50,7 @@ import { DjangoInterceptor } from './_services/_interceptors/django-interceptor'
       useClass: HashLocationStrategy
     },
     {provide: HTTP_INTERCEPTORS, useClass: DjangoInterceptor, multi: true},
-    DatePipe, DecimalPipe, CurrencyPipe
+    DatePipe, DecimalPipe, CurrencyPipe, MessageService,
   ],
   bootstrap: [AppComponent]
 })

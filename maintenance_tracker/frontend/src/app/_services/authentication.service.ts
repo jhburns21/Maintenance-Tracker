@@ -1,7 +1,7 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {DjangoService} from '../_services/_django_services/django-service';
 import {Observable, of} from 'rxjs';
-import {catchError, count, map, tap} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {LoginData} from '../_models/_custom_models/login-data';
 import { environment } from 'src/environments/environment';
 

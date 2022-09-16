@@ -5,3 +5,11 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
+
+#loginForm > .row {
+    margin-top: 1em;
+}
+
+.error-text {
+    color: red;
+}
