@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-y)&baz9n^g^=q)(%k2wvr-v&czb!ct_qug@2x7!q)ks(t3fuyw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://127.0.0.1:4200', 'localhost']
+# ALLOWED_HOSTS = ['http://127.0.0.1:4200', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -62,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:4200', 'http://127.0.0.1:8000']
 
 ROOT_URLCONF = 'maintenance_tracker.urls'
 

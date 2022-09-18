@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12" style="height: 100%;">
                     <label for="username" style="display: block;">User Name</label>
-                    <input pInputText id="username" formControlName="username" />
+                    <input pInputText type="text" id="username" formControlName="username" />
                     <div *ngIf="loginForm.get('username')?.errors">
                         <div class="error-text" *ngIf="loginForm.get('username').errors.required">
                             Username is required.
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-md-12" style="height: 100%">
                     <label for="password" style="display: block;">Password</label>
-                    <input pInputText id="password" formControlName="password" />
+                    <input pInputText type="password" id="password" formControlName="password" />
                     <div *ngIf="loginForm.get('password')?.errors">
                         <div class="error-text" *ngIf="loginForm.get('password').errors.required">
                             Password is required.
