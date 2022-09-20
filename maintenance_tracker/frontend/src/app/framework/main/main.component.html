@@ -3,10 +3,12 @@
     <div class="layout-main">
         <app-header></app-header>
 
-        <app-sidebar></app-sidebar>
+        <div class="body">
+            <app-sidebar></app-sidebar>
 
-        <div class="layout-main-content">
-            <router-outlet></router-outlet>
+            <div class="layout-main-content">
+                <router-outlet></router-outlet>
+            </div>
         </div>
 
         <app-footer></app-footer>
