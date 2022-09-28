@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faHome  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,12 +7,31 @@ import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  faChevronRight = faChevronRight;
-  faChevronLeft = faChevronLeft;
+  faHome = faHome;
+
+  isOpen = false;
+  sidebarItems = [];
 
   constructor() { }
 
   public ngOnInit(): void {
+    this.sidebarItems = [
+      {
+        icon: faHome, text: 'Home', link: ''
+      }
+    ]
+  }
+
+  public onMouseOver(event): void {
+    event.currentTarget.classList.remove('sidebar-collapse');
+    event.currentTarget.classList.add('sidebar-open');
+    this.isOpen = true;
+  }
+
+  public onMouseOut(event): void {
+    event.currentTarget.classList.add('sidebar-collapse');
+    event.currentTarget.classList.remove('sidebar-open');
+    this.isOpen = false;
   }
 
 }

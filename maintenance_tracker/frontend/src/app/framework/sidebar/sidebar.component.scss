@@ -1,7 +1,37 @@
-.sidebar {
-    width: 20vw;
+.sidebar-collapse {
+    width: 3vw;
     display: block;
-    height: 80vh;
+    height: 92vh;
     z-index: 99;
     position: absolute;
+    background-color: #189AD3;
+    transition: width .5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
+}
+
+.sidebar-open {
+    width: 20vw;
+    display: block;
+    height: 92vh;
+    z-index: 99;
+    position: absolute;
+    background-color: #189AD3;
+    transition: width .5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
+}
+
+.sidebar-link-text {
+    color: white;
+}
+
+.selectable-row {
+    background-color: #26b2ee;
+}
+
+.selectable-row:hover {
+    background-color: #157eac;
+}
+
+.selectable-row > * {
+    pointer-events: none;
 }
