@@ -35,3 +35,7 @@
 .selectable-row > * {
     pointer-events: none;
 }
+
+.container-fluid > .row {
+    margin-top: 1rem;
+}

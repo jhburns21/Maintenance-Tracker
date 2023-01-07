@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { faHome  } from '@fortawesome/free-solid-svg-icons';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { faHome, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,18 +9,22 @@ import { faHome  } from '@fortawesome/free-solid-svg-icons';
 })
 export class SidebarComponent implements OnInit {
   faHome = faHome;
+  faEdit = faEdit;
 
   isOpen = false;
   sidebarItems = [];
 
-  constructor() { }
+  iconSize = '2x';
+
+  constructor(public router: Router) { }
 
   public ngOnInit(): void {
     this.sidebarItems = [
-      {
-        icon: faHome, text: 'Home', link: ''
-      }
-    ]
+      { icon: faHome, text: 'Home', link: '/' },
+      { icon: faEdit, text: 'Record Maintenance', link: '/maintenance' },
+    ];
+
+    this.resizeIcons(window.innerWidth);
   }
 
   public onMouseOver(event): void {
@@ -34,4 +39,20 @@ export class SidebarComponent implements OnInit {
     this.isOpen = false;
   }
 
+  public sidebarLinkClick(link: string): void {
+    this.router.navigate([link]);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  public onResize(event): void {
+    this.resizeIcons(event.target.innerWidth);
+  }
+
+  private resizeIcons(size: number): void {
+    if (size < 1600) {
+      this.iconSize = 'lg';
+    } else if (size > 1600) {
+      this.iconSize = '2x';
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 import { MessageService } from 'primeng/api';
@@ -12,11 +12,21 @@ import { AuthenticationService } from 'src/app/_services/authentication.service'
 export class HeaderComponent implements OnInit {
 
   headerIcon = faScrewdriverWrench;
+  iconSize = '3x'
   user = 'John'
 
   constructor(public authService: AuthenticationService, public router: Router, public messageService: MessageService) { }
 
+  private resizeIcons(size: number): void {
+    if (size < 1600) {
+      this.iconSize = 'lg';
+    } else if (size > 1600) {
+      this.iconSize = '3x';
+    }
+  }
+  
   public ngOnInit(): void {
+    this.resizeIcons(window.innerWidth);
   }
 
   public logout(): void {
@@ -29,5 +39,10 @@ export class HeaderComponent implements OnInit {
         this.messageService.add({severity: 'error', summary: 'Error!', detail: 'Unable to logout.'});
       }
     )
+  }
+
+  @HostListener('window:resize', ['$event'])
+  public onResize(event): void {
+    this.resizeIcons(event.target.innerWidth);
   }
 }
