@@ -21,9 +21,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext'
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { MaintenanceRecordComponent } from './maintenance-record/maintenance-record.component';
 import { VehicleTypesComponent } from './vehicle-types/vehicle-types.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
 import { MainetenanceVehiclesComponent } from './mainetenance-vehicles/mainetenance-vehicles.component';
 import { MaintenanceRecordsComponent } from './maintenance-records/maintenance-records.component';
 
@@ -36,9 +34,7 @@ import { MaintenanceRecordsComponent } from './maintenance-records/maintenance-r
     MainComponent,
     HeaderComponent,
     LoginComponent,
-    MaintenanceRecordComponent,
     VehicleTypesComponent,
-    VehiclesComponent,
     MainetenanceVehiclesComponent,
     MaintenanceRecordsComponent
   ],

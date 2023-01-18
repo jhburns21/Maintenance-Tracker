@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   headerIcon = faScrewdriverWrench;
   iconSize = '3x'
-  user = 'John'
+  user = 'User!'
 
   constructor(public authService: AuthenticationService, public router: Router, public messageService: MessageService) { }
 
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
       this.iconSize = '3x';
     }
   }
-  
+
   public ngOnInit(): void {
     this.resizeIcons(window.innerWidth);
   }
