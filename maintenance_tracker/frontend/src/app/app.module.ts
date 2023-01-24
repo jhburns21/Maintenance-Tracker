@@ -24,6 +24,7 @@ import { MessageService } from 'primeng/api';
 import { VehicleTypesComponent } from './vehicle-types/vehicle-types.component';
 import { MainetenanceVehiclesComponent } from './mainetenance-vehicles/mainetenance-vehicles.component';
 import { MaintenanceRecordsComponent } from './maintenance-records/maintenance-records.component';
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MaintenanceRecordsComponent } from './maintenance-records/maintenance-r
     ButtonModule,
     InputTextModule,
     ToastModule,
+    MenubarModule,
   ],
   providers: [
     {

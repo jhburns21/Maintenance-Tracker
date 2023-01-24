@@ -1,17 +1,12 @@
 <div class="container-fluid">
     <div class="row header">
-        <div class="col-md-4 d-flex align-items-center justify-content-start">
-            <div class="bannerImage">
-                <fa-icon [icon]="headerIcon" [size]="iconSize" class="headerIcon"></fa-icon>
-            </div>
-            <div class="bannerText">
-                Maintenance Tracker
-            </div>
-        </div>
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-2 d-flex white-text align-items-center justify-content-around">
-            Hello {{user}} <button pButton pRipple type="button" label="Logout" class="p-button-text white-text" icon="pi pi-user" (click)="logout()"></button>
-        </div>
+      <p-menubar [model]="menuItems" style="padding: 0;background-color: #6fa2d5;">
+        <ng-template pTemplate="start">
+            <fa-icon [icon]="headerIcon" size="{{iconSize}}" class="headerIcon"></fa-icon>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <input type="text" pInputText placeholder="Search">
+        </ng-template>
+    </p-menubar>
     </div>
 </div>

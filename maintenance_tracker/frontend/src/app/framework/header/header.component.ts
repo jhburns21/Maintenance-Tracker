@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
-import { MessageService } from 'primeng/api';
+import {MenuItem, MessageService} from 'primeng/api';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
@@ -11,9 +11,10 @@ import { AuthenticationService } from 'src/app/_services/authentication.service'
 })
 export class HeaderComponent implements OnInit {
 
-  headerIcon = faScrewdriverWrench;
-  iconSize = '3x'
-  user = 'User!'
+  public headerIcon = faScrewdriverWrench;
+  public iconSize = '3x'
+  public user = 'User!'
+  public menuItems: MenuItem[] = [];
 
   constructor(public authService: AuthenticationService, public router: Router, public messageService: MessageService) { }
 
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+
     this.resizeIcons(window.innerWidth);
   }
 
