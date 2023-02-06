@@ -1,11 +1,15 @@
 <div class="container-fluid">
     <div class="row header">
       <p-menubar [model]="menuItems" style="padding: 0;background-color: #6fa2d5;">
-        <ng-template pTemplate="start">
-            <fa-icon [icon]="headerIcon" size="{{iconSize}}" class="headerIcon"></fa-icon>
+        <ng-template pTemplate="start" class="test">
+          <fa-icon [icon]="headerIcon" size="{{iconSize}}" class="headerIcon"></fa-icon>
+          <h2 style="display: inline-block; margin: 0 1rem;">Maintenance Tracker</h2>
         </ng-template>
         <ng-template pTemplate="end">
-            <input type="text" pInputText placeholder="Search">
+          <div style="display: inline-block">
+            Welcome {{user}}
+          </div>
+          <p-splitButton></p-splitButton>
         </ng-template>
     </p-menubar>
     </div>
