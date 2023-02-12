@@ -21,14 +21,28 @@ body {
   color: white;
 }
 
+$primary-color: #8B95C9;
+$secondary-color: #ACD7EC;
+$page-background-color: #f8f9fa;
+
 .primary {
-  background-color: #8B95C9;
+  background-color: $primary-color !important;
 }
 
 .secondary {
-  background-color: #ACD7EC;
+  background-color: $secondary-color !important;
 }
 
 .page-background {
-  background-color: #f8f9fa;
+  background-color: $page-background-color !important;
+}
+
+.primary > .p-splitbutton > .p-button {
+  @extend .primary;
+  border-color: $primary-color;
+}
+
+.primary > .p-button {
+  @extend .primary;
+  border-color: $primary-color;
 }

@@ -16,7 +16,14 @@ export class HeaderComponent implements OnInit {
   public user = 'User!'
   public menuItems: MenuItem[] = [];
 
-  constructor(public authService: AuthenticationService, public router: Router, public messageService: MessageService) { }
+  constructor(public authService: AuthenticationService, public router: Router, public messageService: MessageService) {
+    this.menuItems = [
+      {
+        icon: 'pi pi-sign-out',
+
+      }
+    ]
+  }
 
   private resizeIcons(size: number): void {
     if (size < 1600) {
@@ -27,7 +34,6 @@ export class HeaderComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-
     this.resizeIcons(window.innerWidth);
   }
 
